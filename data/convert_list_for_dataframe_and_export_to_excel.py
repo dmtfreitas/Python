@@ -1,7 +1,7 @@
 
 # coding: UTF-8
 
-# convert_list_for_dataframe.py
+# convert_list_for_dataframe_and_export_to_excel.py
 
 import pandas as pd
 
@@ -13,4 +13,4 @@ cars = {
 
 dataframe = pd.DataFrame (cars)
 
-print (dataframe)
+dataframe.to_excel ('cars.xlsx', index=False, header=True)
