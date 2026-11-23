@@ -121,7 +121,7 @@ def usernames_from_record (record, is_following):
 
             if isinstance (entry, dict):
 
-                value = entry.get ("value")
+                value = entry.get ('value')
 
                 if isinstance (value, str) and value.strip ():
                     
@@ -153,7 +153,7 @@ def extract_usernames (data, is_following):
 
         for name in usernames_from_record (record, is_following):
 
-            clean = name.strip ().lstrip ("@")
+            clean = name.strip ().lstrip ('@')
 
             if clean:
 
@@ -201,8 +201,8 @@ def main ():
     if not found_followers_file or not found_following_file:
 
         raise ValueError (
-            "Exportação incompleta: arquivos de seguidores "
-            "e seguindo são necessários."
+            'Exportação incompleta: arquivos de seguidores!'
+            'E seguindo são necessários...'
         )
 
     all_profiles = set(followers) | set(following)
@@ -241,13 +241,14 @@ def main ():
         1 for key in followers if key not in following
     )
 
-    print("\nANÁLISE CONCLUÍDA!")
-    print("-----------------------------------")
-    print(f"Perfis analisados: {len(all_profiles)}")
-    print(f"Não seguem de volta: {not_following_back}")
-    print(f"Seguem você e você não segue: {follows_you_only}")
-    print("-----------------------------------")
-    print(f"Excel gerado: {EXCEL_PATH}")
+    print ( '\n========== ANÁLISE CONCLUÍDA! ===========')
+    print ( f'----------------------------------------- ')
+    print ( f'ANALYZED PROFILES - {len(all_profiles)}   ')
+    print ( f'NÃO SEGUEM DE VOLTA - {not_following_back}')
+    print ( f'SEGUEM E EU NÃO SIGO - {follows_you_only} ')
+    print ( f'----------------------------------------- ')
+    print ( f'========================================= ')
+    print ( f'========= GENERATED EXCEL FILE ========== ')
 
 if __name__ == '__main__':
     
